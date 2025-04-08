@@ -1,7 +1,44 @@
-import "./App.css";
+import "./index.css";
 
 function App() {
-  return console.log("asd");
+  return (
+    <main className="cards-deck">
+      <div className="card-box-profile">
+        <div className="card-profile a">
+          <img
+            className="avatar"
+            src={process.env.PUBLIC_URL + "/images/image-jeremy.png"}
+            alt="avatar"
+          />
+          <div className="card-profile-info">
+            <span>Report for</span>
+            <p>Jeremy Robson</p>
+          </div>
+        </div>
+        <span>Daily</span>
+        <span>Weekly</span>
+        <span>Monthly</span>
+      </div>
+      <div className="card-box b ">
+        <div className="card ">Card B - Inner</div>
+      </div>
+      <div className="card-box c ">
+        <div className="card ">Card C - Inner</div>
+      </div>
+      <div className="card-box d">
+        <div className="card ">Card D - Inner</div>
+      </div>
+      <div className="card-box e">
+        <div className="card  ">Card E - Inner</div>
+      </div>
+      <div className="card-box f">
+        <div className="card ">Card F - Inner</div>
+      </div>
+      <div className="card-box g">
+        <div className="card ">Card G - Inner</div>
+      </div>
+    </main>
+  );
 }
 
 export default App;

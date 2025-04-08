@@ -20,13 +20,143 @@
   --navy-200: hsl(236, 100%, 87%);
 }
 
-body {
-  font-size: 18px;
-  font-family: var(--font-main), sans-serif;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  font-size: 18px;
+  font-family: var(--font-main), sans-serif;
+  background-color: var(--navy-950);
+}
+
+/* CARDS */
+
+.cards-deck {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  gap: 2rem;
+
+  padding: 2rem;
+  background-color: #fff;
+}
+
+/* CONTENT CARD */
+.card-box {
+  width: 100%;
+  max-width: 20rem;
+  min-height: 6.5rem;
+
+  background-color: var(--navy-900);
+  color: #fff;
+
+  border-radius: 1rem;
+  padding-top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card {
+  width: 100%;
+  height: auto;
+  background-color: var(--navy-900);
+  color: #fff;
+  border-radius: 1rem;
+
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+/* PROFILE CARD */
+
+.card-box-profile {
+  width: 100%;
+  max-width: 20rem;
+  min-height: 6.5rem;
+
+  background-color: var(--navy-900);
+  color: #fff;
+
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card-profile {
+  background-color: var(--purple-600);
+  color: #fff;
+
+  width: 100%;
+  height: auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+  border: 3px solid white;
+  padding: 2px;
+
+  background-clip: content-box;
+}
+
+.a {
+}
+.b {
+  background-color: var(--orange-300);
+}
+.c {
+  background-color: var(--blue-300);
+}
+.d {
+  background-color: var(--pink-400);
+}
+.e {
+  background-color: var(--green-400);
+}
+.f {
+  background-color: var(--purple-700);
+}
+.g {
+  background-color: var(--yellow-300);
+}
+
+/* @media (min-width: 700px) {
+  .card-box {
+    grid-template-columns: repeat(4, 150px);
+    grid-gap: 1rem; 
+}
+
+  /* .a {
+    grid-area: 1 / 1 / 3 / 2;
+  }
+  .b {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .c {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+  .d {
+    grid-area: 1 / 4 / 2 / 5;
+  }
+  .e {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .f {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+  .g {
+    grid-area: 2 / 4 / 3 / 5;
+} }*/
