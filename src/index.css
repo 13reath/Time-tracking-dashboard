@@ -30,6 +30,7 @@ body {
   min-height: 100vh;
   width: 100%;
   font-size: 18px;
+  font-weight: 400;
   font-family: var(--font-main), sans-serif;
   background-color: var(--navy-950);
 }
@@ -43,7 +44,7 @@ body {
   gap: 2rem;
 
   padding: 2rem;
-  background-color: #fff;
+  background-color: var(--navy-950);
 }
 
 /* CONTENT CARD */
@@ -63,7 +64,7 @@ body {
   overflow: hidden;
 }
 
-.card {
+.card-inner {
   width: 100%;
   height: auto;
   background-color: var(--navy-900);
@@ -72,6 +73,33 @@ body {
 
   padding: 1rem;
   flex-grow: 1;
+}
+
+.card-theme,
+.card-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-theme-image {
+  width: 1.5rem;
+  height: auto;
+  object-fit: contain;
+}
+
+.card-time {
+  font-weight: 300;
+  padding-top: 0.5rem;
+}
+
+.card-time p {
+  font-size: 2rem;
+}
+
+.card-time span {
+  font-size: 1rem;
+  color: var(--navy-200);
 }
 
 /* PROFILE CARD */
@@ -101,7 +129,7 @@ body {
   align-items: center;
 }
 
-.avatar {
+.card-profile-avatar {
   width: 80px;
   height: 80px;
 
@@ -112,8 +140,41 @@ body {
   background-clip: content-box;
 }
 
-.a {
+.card-profile-info {
+  padding: 1rem;
+  font-weight: 300;
 }
+
+.card-profile-info span {
+  color: var(--navy-200);
+}
+
+.card-profile-info p {
+  font-size: 1.35rem;
+}
+
+.card-profile-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1.5rem 0 1.5rem 0;
+}
+
+.card-profile-buttons button {
+  background: transparent;
+  border: none;
+
+  font-size: 1rem;
+
+  color: var(--purple-500);
+}
+
+.card-profile-buttons button:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+/* .a {
+} */
 .b {
   background-color: var(--orange-300);
 }
