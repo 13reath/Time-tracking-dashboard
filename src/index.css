@@ -39,10 +39,10 @@ body {
 
 .cards-deck {
   display: grid;
+  grid-template-columns: 1fr;
   place-items: center;
   min-height: 100vh;
   gap: 2rem;
-
   padding: 2rem;
   background-color: var(--navy-950);
 }
@@ -188,52 +188,113 @@ body {
   cursor: pointer;
 }
 
-/* .a {
-} */
-.b {
+.card-0 {
   background-color: var(--orange-300);
 }
 
-.c {
+.card-1 {
   background-color: var(--blue-300);
 }
-.d {
+.card-2 {
   background-color: var(--pink-400);
 }
-.e {
+.card-3 {
   background-color: var(--green-400);
 }
-.f {
+.card-4 {
   background-color: var(--purple-700);
 }
-.g {
+.card-5 {
   background-color: var(--yellow-300);
 }
 
-/* @media (min-width: 700px) {
-  .card-box {
-    grid-template-columns: repeat(4, 150px);
-    grid-gap: 1rem; 
-}
+@media (min-width: 900px) {
+  .cards-deck {
+    grid-template-columns: repeat(4, minmax(10rem, 15rem));
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    width: 100%;
+  }
 
-  /* .a {
+  .card-x {
     grid-area: 1 / 1 / 3 / 2;
   }
-  .b {
+  .card-0 {
     grid-area: 1 / 2 / 2 / 3;
   }
-  .c {
+  .card-1 {
     grid-area: 1 / 3 / 2 / 4;
   }
-  .d {
+  .card-2 {
     grid-area: 1 / 4 / 2 / 5;
   }
-  .e {
+  .card-3 {
     grid-area: 2 / 2 / 3 / 3;
   }
-  .f {
+  .card-4 {
     grid-area: 2 / 3 / 3 / 4;
   }
-  .g {
+  .card-5 {
     grid-area: 2 / 4 / 3 / 5;
-} }*/
+  }
+
+  .card-box-profile {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+  }
+
+  .card-profile {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-profile-info {
+    padding: 2rem 0 0 0;
+  }
+
+  .card-profile-info p {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  .card-profile-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0 1rem 2rem;
+    margin: 0;
+    justify-content: space-around;
+    flex-grow: 1;
+  }
+
+  .card-box {
+    min-height: 15rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-inner {
+    flex-grow: 1;
+    padding: 2rem;
+  }
+
+  .card-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-time p {
+    font-size: 3rem;
+  }
+
+  .card-time span {
+    padding-top: 1rem;
+  }
+}
