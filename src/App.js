@@ -12,57 +12,25 @@ const content = {
   Monthly_previous: ["128hrs", "29hrs", "19hrs", "18hrs", "23hrs", "11hrs"],
 };
 
-//   Work
-//   5hrs <!-- daily -->
-//   Previous - 7hrs <!-- daily -->
-//   32hrs <!-- weekly -->
-//   Previous - 36hrs <!-- weekly -->
-//   103hrs <!-- monthly -->
-//   Previous - 128hrs <!-- monthly -->
-
-//   Play
-//   1hr <!-- daily -->
-//   Previous - 2hrs <!-- daily -->
-//   10hrs <!-- weekly -->
-//   Previous - 8hrs <!-- weekly -->
-//   23hrs <!-- monthly -->
-//   Previous - 29hrs <!-- monthly -->
-
-//   Study
-//   0hrs <!-- daily -->
-//   Previous - 1hr <!-- daily -->
-//   4hrs <!-- weekly -->
-//   Previous - 7hrs <!-- weekly -->
-//   13hrs <!-- monthly -->
-//   Previous - 19hrs <!-- monthly -->
-
-//   Exercise
-//   1hr <!-- daily -->
-//   Previous - 1hr <!-- daily -->
-//   4hrs <!-- weekly -->
-//   Previous - 5hrs <!-- weekly -->
-//   11hrs <!-- monthly -->
-//   Previous - 18hrs <!-- monthly -->
-
-//   Social
-//   1hr <!-- daily -->
-//   Previous - 3hrs <!-- daily -->
-//   5hrs <!-- weekly -->
-//   Previous - 10hrs <!-- weekly -->
-//   21hrs <!-- monthly -->
-//   Previous - 23hrs <!-- monthly -->
-
-//   Self Care
-//   0hrs <!-- daily -->
-//   Previous - 1hr <!-- daily -->
-//   2hrs <!-- weekly -->
-//   Previous - 2hrs <!-- weekly -->
-//   7hrs <!-- monthly -->
-//   Previous - 11hrs <!-- monthly -->
-
 function App() {
   const [activeTimeline, setActiveTimeline] = useState("Daily_active");
   const [previousTimeline, setPreviousTimeline] = useState("Daily_previous");
+  const [period, setPeriod] = useState("Yesterday");
+
+  const handleClick = (timeline) => {
+    setActiveTimeline(timeline + "_active");
+    setPreviousTimeline(timeline + "_previous");
+
+    setPeriod(
+      timeline === "Daily"
+        ? "Yesterday"
+        : timeline === "Weekly"
+        ? "Last Week"
+        : timeline === "Monthly"
+        ? "Last Month"
+        : ""
+    );
+  };
 
   return (
     <main className="cards-deck">
@@ -81,34 +49,18 @@ function App() {
         </div>
 
         <div className="card-profile-buttons">
-          <button
-            onClick={() => {
-              setActiveTimeline("Daily_active");
-              setPreviousTimeline("Daily_previous");
-            }}
-          >
-            Daily
-          </button>
-          <button
-            onClick={() => {
-              setActiveTimeline("Weekly_active");
-              setPreviousTimeline("Weekly_previous");
-            }}
-          >
-            Weekly
-          </button>
-          <button
-            onClick={() => {
-              setActiveTimeline("Monthly_active");
-              setPreviousTimeline("Monthly_previous");
-            }}
-          >
-            Monthly
-          </button>
+          <button onClick={() => handleClick("Daily")}>Daily</button>
+          <button onClick={() => handleClick("Weekly")}>Weekly</button>
+          <button onClick={() => handleClick("Monthly")}>Monthly</button>
         </div>
       </div>
 
       <div className="card-box b ">
+        <img
+          className="card-box-image"
+          src={process.env.PUBLIC_URL + "/images/icon-work.svg"}
+          alt=""
+        />
         <div className="card-inner">
           <div className="card-theme">
             <p>Work</p>
@@ -120,10 +72,13 @@ function App() {
           </div>
           <div className="card-time">
             <p>{content[activeTimeline][0]}</p>
-            <span>Yesterday - {content[previousTimeline][0]}</span>
+            <span>
+              {period} - {content[previousTimeline][0]}
+            </span>
           </div>
         </div>
       </div>
+
       <div className="card-box c ">
         <div className="card-inner">
           <div className="card-theme">
@@ -136,10 +91,13 @@ function App() {
           </div>
           <div className="card-time">
             <p>{content[activeTimeline][1]}</p>
-            <span>Yesterday - {content[previousTimeline][1]}</span>
+            <span>
+              {period} - {content[previousTimeline][1]}
+            </span>
           </div>
         </div>
       </div>
+
       <div className="card-box d">
         <div className="card-inner">
           <div className="card-theme">
@@ -152,10 +110,13 @@ function App() {
           </div>
           <div className="card-time">
             <p>{content[activeTimeline][2]}</p>
-            <span>Yesterday - {content[previousTimeline][2]}</span>
+            <span>
+              {period} - {content[previousTimeline][2]}
+            </span>
           </div>
         </div>
       </div>
+
       <div className="card-box e">
         <div className="card-inner">
           <div className="card-theme">
@@ -168,10 +129,13 @@ function App() {
           </div>
           <div className="card-time">
             <p>{content[activeTimeline][3]}</p>
-            <span>Yesterday - {content[previousTimeline][3]}</span>
+            <span>
+              {period} - {content[previousTimeline][3]}
+            </span>
           </div>
         </div>
       </div>
+
       <div className="card-box f">
         <div className="card-inner">
           <div className="card-theme">
@@ -184,10 +148,13 @@ function App() {
           </div>
           <div className="card-time">
             <p>{content[activeTimeline][4]}</p>
-            <span>Yesterday - {content[previousTimeline][4]}</span>
+            <span>
+              {period} - {content[previousTimeline][4]}
+            </span>
           </div>
         </div>
       </div>
+
       <div className="card-box g">
         <div className="card-inner">
           <div className="card-theme">
@@ -200,7 +167,9 @@ function App() {
           </div>
           <div className="card-time">
             <p>{content[activeTimeline][5]}</p>
-            <span>Yesterday - {content[previousTimeline][5]}</span>
+            <span>
+              {period} - {content[previousTimeline][5]}
+            </span>
           </div>
         </div>
       </div>
